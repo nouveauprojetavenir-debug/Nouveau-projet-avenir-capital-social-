@@ -1,409 +1,91 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Avenir Capital</title>
-<style>
-:root{--bg:#0a1a12;--card:#132e21;--tx:#f8fafc;--mu:#a3b8af;--pr:#10b981;--pr2:#059669;--bd:#1e4632;--wa:#10b981;--er:#ef4444;--gold:#f59e0b;--red:#dc2626;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1a12;--card:#132e21;--tx:#f8fafc;--mu:#a3b8af;--pr:#10b981;--pr2:#059669;--bd:#1e4632}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.4 system-ui,sans-serif;padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
-#app{max-width:480px;margin:auto;padding:16px}
-h1,h2{margin:0 0 12px}h2{font-size:20px}
-.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:14px;margin-bottom:12px}
-.hero{background:linear-gradient(135deg,var(--red),var(--pr));color:#fff;border-radius:16px;padding:18px;margin-bottom:14px}
-.hero small{opacity:.85}.hero b{display:block;font-size:30px}
-.reclamer-box{background:rgba(16, 185, 129, 0.1);border:2px solid var(--pr);border-radius:14px;padding:16px;margin-bottom:14px;text-align:center}
-.bonus-box{background:linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(16, 185, 129, 0.15));border:2px solid var(--gold);border-radius:14px;padding:16px;margin-bottom:14px;text-align:center}
-input,select{width:100%;padding:12px;margin:6px 0 12px;border:1px solid var(--bd);border-radius:10px;background:var(--card);color:var(--tx);font:inherit}
-label{font-size:13px;color:var(--mu)}
-button{font:inherit;cursor:pointer}
-.btn{width:100%;padding:13px;border:0;border-radius:10px;background:var(--pr);color:#fff;font-weight:600;text-decoration:none;display:inline-block;text-align:center}
-.btn:disabled{background:#374151;cursor:not-allowed;opacity:0.7}
-.btn.sec{background:rgba(16,185,129,0.15);color:var(--pr)}.btn.out{background:none;border:1px solid var(--er);color:var(--er)}
-.btn-gold{background:linear-gradient(135deg,var(--gold),#d97706);color:#fff}
-.btn-wa{background:#25D366;color:#fff;margin-bottom:12px}
-.btn-sm{width:auto;padding:10px 20px;font-size:15px;border-radius:8px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
-.grid button{padding:16px 8px;border-radius:12px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font-weight:600}
-.row{display:flex;justify-content:space-between;align-items:center;gap:8px}
-.li{display:flex;justify-content:space-between;width:100%;padding:14px;margin-bottom:8px;border:1px solid var(--bd);border-radius:12px;background:var(--card);color:var(--tx);text-align:left}
-.tag{font-size:12px;padding:3px 9px;border-radius:20px;background:rgba(245, 158, 11, 0.2);color:var(--gold)}
-.mu{color:var(--mu);font-size:14px}.err{color:var(--er);font-size:14px;min-height:20px;margin:-4px 0 8px}
-.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.chips button{padding:8px 12px;border-radius:20px;border:1px solid var(--bd);background:var(--card);color:var(--tx)}
-.back{background:none;border:0;color:var(--pr);padding:0 0 10px;font-weight:600}
-nav{position:fixed;left:0;right:0;bottom:0;display:flex;background:var(--card);border-top:1px solid var(--bd);padding-bottom:env(safe-area-inset-bottom,0px);z-index:100}
-nav button{flex:1;padding:12px 2px;border:0;background:none;color:var(--mu);font-size:12px}nav button.on{color:var(--pr);font-weight:700}
-nav span{display:block;font-size:20px}
-.wave{border:2px solid var(--wa)}.off{opacity:.55}
-.num{font-size:22px;font-weight:700;letter-spacing:1px}
-.prod-img{width:100%;height:180px;object-fit:cover;border-radius:10px;margin-bottom:10px}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avenir Capital</title>
+    <style>
+        :root {
+            --bg: #0a1a12;
+            --card: #132e21;
+            --tx: #f8fafc;
+            --mu: #a3b8af;
+            --pr: #10b981;
+        }
+        body {
+            background-color: var(--bg);
+            color: var(--tx);
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            background-color: var(--card);
+            padding: 20px;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        h2 { margin-top: 0; color: var(--pr); }
+        .input-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; color: var(--mu); font-size: 14px; }
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #2d4a3e;
+            background: #0a1a12;
+            color: var(--tx);
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+        .btn {
+            background-color: var(--pr);
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
 </head>
-<body><div id="app"></div><nav id="nav"></nav>
+<body>
 
-<script type="module">
-import {initializeApp} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import {getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut,onAuthStateChanged} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import {getFirestore,doc,setDoc,onSnapshot,collection,addDoc,runTransaction,updateDoc,getDocs} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-const firebaseConfig={apiKey:"AIzaSyC8jUCtIrHrySXzNAXTdRTaCBTNgEirS8w",authDomain:"avenir-capital.firebaseapp.com",projectId:"avenir-capital",storageBucket:"avenir-capital.firebasestorage.app",messagingSenderId:"565430762059",appId:"1:565430762059:web:3c7d536d55d3277d35ebce"};
-
-const WAVE_NUM="0509302107";
-const MOOV_NUM="0104217547";
-const MTN_NUM="0545576710";
-const SUPPORT="https://wa.me/message/ABZ2BRFJPVIOE1";
-const WA_GROUP="https://chat.whatsapp.com/GJkaaZhk51y0VpbNPfEbms?s=cl&p=a&mlu=4&ilr=4&iam=2";
-const BASE_REF_LINK="https://nouveauprojetavenir-debug.github.io/Nouveau-projet-avenir-capital-/";
-
-const VIP=[
-  {n:"VIP1 Sac Découverte", p:5000, d:500, days:7, total:8500, benef:3500, img:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80"},
-  {n:"VIP2 Sac Essentiel", p:10000, d:1000, days:15, total:25000, benef:15000, img:"https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=600&q=80"},
-  {n:"VIP3 Sac Croissance", p:50000, d:1130, days:20, total:72600, benef:22600, img:"https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?auto=format&fit=crop&w=600&q=80"},
-  {n:"VIP4 Sac Premium", p:100000, d:2000, days:30, total:160000, benef:60000, img:"https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=600&q=80"},
-  {n:"VIP5 Sac Excellence", p:200000, d:3000, days:45, total:450000, benef:250000, img:"https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=600&q=80"},
-  {n:"VIP6 Sac Prestige", p:500000, d:2250, days:60, total:635000, benef:135000, img:"https://images.unsplash.com/photo-1608256246200-53e635b5b65f?auto=format&fit=crop&w=600&q=80"},
-  {n:"VIP7 Sac Élite", p:1000000, d:5000, days:90, total:1450000, benef:450000, img:"https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=80"},
-  {n:"VIP8 Sac Premium", p:4000, d:343, days:12, total:8116, benef:4116, img:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80"},
-  {n:"VIP9 Sac Excellence", p:3500, d:250, days:23, total:9250, benef:5750, img:"https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=600&q=80"}
-];
-
-const METH=["Wave","MTN Money","Moov Money"];
-const auth=getAuth(initializeApp(firebaseConfig)),fs=getFirestore();
-const em=p=>p.replace(/\D/g,"")+"@avenir.app";
-let ud=null,recs=[],rets=[],buys=[],teamN=0,unsubs=[],P="login",T={};
-let hasGainsAvailable = false;
-
-const U=()=>ud&&{...ud,recs,rets,buys},F=n=>Number(n||0).toLocaleString("fr-FR")+" F",D=()=>new Date().toLocaleDateString("fr-FR");
-const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const $=id=>document.getElementById(id).value.trim();
-
-function getUrlParam(param){
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(param);
-}
-
-window.go = function(p,t){P=p;if(t)Object.assign(T,t);render();scrollTo(0,0)};
-function err(m){const e=document.getElementById("err");if(e)e.textContent=m}
-const msg=e=>({"auth/email-already-in-use":"Ce numéro est déjà inscrit.","auth/invalid-credential":"Numéro ou mot de passe incorrect.","auth/weak-password":"Mot de passe : 6 caractères minimum."}[e.code]||("Erreur : "+(e.code||e.message)));
-const back=(p="home")=>`<button class="back" onclick="go('${p}')">‹ Retour</button>`;
-const hist=(a,empty)=>a.length?a.map(x=>`<div class="card row"><div><b>${F(x.a)}</b><div class="mu">${x.m||'Retrait'} · ${x.t}</div></div><span class="tag">${x.s||"En attente"}</span></div>`).join(""):`<p class="mu">${empty}</p>`;
-
-window.copyN = function(num){
-  navigator.clipboard.writeText(num).then(()=>alert("✅ Numéro copié !")).catch(()=>alert(num))
-};
-
-window.copyLink = function(link){
-  navigator.clipboard.writeText(link).then(()=>alert("✅ Lien de parrainage copié !")).catch(()=>alert(link))
-};
-
-async function verifierGainsDisponibles(){
-  const user = auth.currentUser;
-  if (!user) return false;
-  try {
-    const buysRef = collection(fs, "users", user.uid, "buys");
-    const snap = await getDocs(buysRef);
-    if (snap.empty) return false;
-    const now = Date.now();
-    const msPerDay = 86400000;
-    for (const d of snap.docs) {
-      const buyData = d.data();
-      const createdAt = buyData.createdAt || now;
-      const lastClaim = buyData.lastClaim || createdAt;
-      const daysPaid = buyData.daysPaid || 0;
-      const maxDays = buyData.days;
-      if (daysPaid >= maxDays) continue;
-      const daysElapsed = Math.floor((now - lastClaim) / msPerDay);
-      if (daysElapsed > 0) return true;
-    }
-    return false;
-  } catch {
-    return false;
-  }
-}
-
-window.checkAndUpdateButton = async function(){
-  hasGainsAvailable = await verifierGainsDisponibles();
-  const btn = document.getElementById("btn-reclamer");
-  const msgEl = document.getElementById("gain-msg");
-  if (btn) btn.disabled = !hasGainsAvailable;
-  if (msgEl) {
-    if (hasGainsAvailable) {
-      msgEl.style.color = "var(--pr)";
-      msgEl.textContent = "✨ Des gains sont disponibles !";
-    } else {
-      msgEl.style.color = "var(--mu)";
-      msgEl.textContent = "⏰ Revenez demain matin pour réclamer";
-    }
-  }
-};
-
-window.reclamerMesGains = async function() {
-  const user = auth.currentUser;
-  if (!user) return;
-  const msgEl = document.getElementById("gain-msg");
-  const btn = document.getElementById("btn-reclamer");
-  if (btn) btn.disabled = true;
-  if (msgEl) msgEl.textContent = "Calcul en cours...";
-
-  try {
-    const buysRef = collection(fs, "users", user.uid, "buys");
-    const snap = await getDocs(buysRef);
-    if (snap.empty) {
-      if (msgEl) msgEl.textContent = "Vous n'avez aucun sac d'investissement actif.";
-      hasGainsAvailable = false;
-      return;
-    }
-
-    let totalGain = 0;
-    const now = Date.now();
-    const msPerDay = 86400000;
-
-    for (const d of snap.docs) {
-      const buyData = d.data();
-      const createdAt = buyData.createdAt || now;
-      const lastClaim = buyData.lastClaim || createdAt;
-      const daysPaid = buyData.daysPaid || 0;
-      const maxDays = buyData.days;
-      if (daysPaid >= maxDays) continue;
-      const daysElapsed = Math.floor((now - lastClaim) / msPerDay);
-      if (daysElapsed > 0) {
-        const daysToPay = Math.min(daysElapsed, maxDays - daysPaid);
-        const gain = daysToPay * buyData.d;
-        totalGain += gain;
-        await updateDoc(doc(fs, "users", user.uid, "buys", d.id), {
-          daysPaid: daysPaid + daysToPay,
-          lastClaim: lastClaim + (daysToPay * msPerDay)
-        });
-      }
-    }
-
-    if (totalGain > 0) {
-      await runTransaction(fs, async t => {
-        const uRef = doc(fs, "users", user.uid);
-        const uSnap = await t.get(uRef);
-        const curBal = uSnap.data().bal || 0;
-        t.update(uRef, { bal: curBal + totalGain });
-      });
-      if (msgEl) {
-        msgEl.style.color = "var(--pr)";
-        msgEl.textContent = `🎉 +${F(totalGain)} ajouté à votre solde !`;
-      }
-    } else {
-      if (msgEl) {
-        msgEl.style.color = "var(--mu)";
-        msgEl.textContent = "🔒 Pas encore de gains. Revenez demain matin.";
-      }
-    }
-    hasGainsAvailable = false;
-  } catch (e) {
-    if (msgEl) {
-      msgEl.style.color = "var(--er)";
-      msgEl.textContent = "Erreur : " + e.message;
-    }
-    hasGainsAvailable = true;
-  }
-  setTimeout(() => checkAndUpdateButton(), 30000);
-};
-
-window.demanderPret = function() {
-  window.location.href = SUPPORT;
-};
-
-window.signup = async function(){
-  try {
-    const name = $('n'), phone = $('ph'), pw = $('pw'), ref = $('rf');
-    if(!name || !phone || !pw) return err("Veuillez remplir tous les champs.");
-    const res = await createUserWithEmailAndPassword(auth, em(phone), pw);
-    await setDoc(doc(fs, "users", res.user.uid), {
-      name, phone, ref, bal: 0, ts: Date.now()
-    });
-  } catch(e){ err(msg(e)); }
-};
-
-window.login = async function(){
-  try {
-    const phone = $('ph'), pw = $('pw');
-    if(!phone || !pw) return err("Veuillez remplir tous les champs.");
-    await signInWithEmailAndPassword(auth, em(phone), pw);
-  } catch(e){ err(msg(e)); }
-};
-
-window.logout = function(){ signOut(auth); };
-
-window.buy = async function(idx) {
-  const item = VIP[idx];
-  const user = auth.currentUser;
-  if (!user) return;
-  
-  try {
-    const buysRef = collection(fs, "users", user.uid, "buys");
-    const snap = await getDocs(buysRef);
-    let activeCount = 0;
-    
-    for (const d of snap.docs) {
-      const bData = d.data();
-      const maxDays = bData.days;
-      const daysPaid = bData.daysPaid || 0;
-      if (daysPaid < maxDays) {
-        activeCount++;
-      }
-    }
-    
-    if (activeCount > 0) {
-      alert("❌ Vous avez déjà un produit actif en cours. Veuillez attendre qu'il arrive à expiration avant d'en acheter un autre.");
-      return;
-    }
-
-    await runTransaction(fs, async t => {
-      const uRef = doc(fs, "users", user.uid);
-      const uSnap = await t.get(uRef);
-      const curBal = uSnap.data().bal || 0;
-      if (curBal < item.p) throw new Error("Solde insuffisant pour acheter ce sac.");
-      t.update(uRef, { bal: curBal - item.p });
-    });
-
-    await addDoc(collection(fs, "users", user.uid, "buys"), {
-      n: item.n, p: item.p, d: item.d, days: item.days,
-      t: D(), createdAt: Date.now(), lastClaim: Date.now(), daysPaid: 0
-    });
-    alert("✅ Achat du " + item.n + " réussi !");
-    setTimeout(() => checkAndUpdateButton(), 500);
-    go("achats");
-  } catch (e) {
-    err(e.message);
-  }
-};
-
-window.toMethod = function(){
-  const amt = Number($('a'));
-  if(!amt || amt < 1000) return err("Le montant minimum est de 1 000 F.");
-  go('method', {amt});
-};
-
-window.confirmPay = async function(m){
-  const user = auth.currentUser;
-  if(!user) return;
-  const pn = $('pn'), tx = $('tx');
-  if(!pn || !tx) return err("Veuillez renseigner votre numéro et l'ID de transaction.");
-  try {
-    await addDoc(collection(fs, "users", user.uid, "recs"), {
-      a: T.amt, m, pn, tx, t: D(), s: "En attente", ts: Date.now()
-    });
-    alert("✅ Votre demande de recharge a été soumise avec succès !");
-    go("histRec");
-  } catch(e) { err(e.message); }
-};
-
-window.doWd = async function(){
-  const user = auth.currentUser;
-  if(!user) return;
-  const a = Number($('a')), pn = $('pn');
-  if(!a || a < 1000) return err("Le montant minimum de retrait est de 1 000 F.");
-  if(!pn) return err("Veuillez entrer votre numéro de paiement.");
-  try {
-    await runTransaction(fs, async t => {
-      const uRef = doc(fs, "users", user.uid);
-      const uSnap = await t.get(uRef);
-      const curBal = uSnap.data().bal || 0;
-      if (curBal < a) throw new Error("Solde insuffisant.");
-      t.update(uRef, { bal: curBal - a });
-    });
-    await addDoc(collection(fs, "users", user.uid, "rets"), {
-      a, pn, t: D(), s: "En attente", ts: Date.now()
-    });
-    alert("✅ Demande de retrait effectuée !");
-    go("histRet");
-  } catch(e) { err(e.message); }
-};
-
-window.doLink = async function(){
-  const user = auth.currentUser;
-  if(!user) return;
-  const m = $('m'), num = $('pn');
-  if(!num) return err("Entrez un numéro valide.");
-  try {
-    await updateDoc(doc(fs, "users", user.uid), { card: { m, num } });
-    alert("✅ Compte de retrait lié avec succès !");
-    go("home");
-  } catch(e) { err(e.image); }
-};
-
-const pages={
-  signup:()=>{
-    const refCode = getUrlParam('ref') || '';
-    return `<h1>Avenir Capital</h1><p class="mu">Créez votre compte pour commencer à investir.</p>
     <div class="card">
-      <label>Nom complet</label><input id="n">
-      <label>Numéro de téléphone</label><input id="ph" type="tel">
-      <label>Mot de passe</label><input id="pw" type="password">
-      <label>Code d'invitation (parrain)</label><input id="rf" value="${esc(refCode)}">
-      <div id="err" class="err"></div>
-      <button class="btn" onclick="signup()">S'inscrire</button>
-    </div>
-    <button class="btn sec" onclick="go('login')">J'ai déjà un compte</button>`;
-  },
-  login:()=>`<h1>Avenir Capital</h1><div class="card"><label>Numéro de téléphone</label><input id="ph" type="tel"><label>Mot de passe</label><input id="pw" type="password"><div id="err" class="err"></div><button class="btn" onclick="login()">Se connecter</button></div><button class="btn sec" onclick="go('signup')">Créer un compte</button>`,
-
-  home:()=>{
-    const u=U();
-    const cardInfo = u.card ? `${u.card.m} - ${u.card.num}` : 'Aucun portefeuille lié';
-    return`
-      <h2>Bonjour ${esc(u.name)} 👋</h2>
-      <div class="hero">
-        <small>Solde disponible</small>
-        <b>${F(u.bal)}</b>
-      </div>
-      
-      <div class="bonus-box">
-        <h3 style="color:var(--gold);margin:0 0 6px 0">💸 Prêt Rapide 71 000 F</h3>
-        <p class="mu" style="margin:0 0 12px 0">Obtenez un prêt rapide de 71 000 F pour financer vos projets ou booster vos investissements !</p>
-        <button class="btn btn-gold btn-sm" onclick="demanderPret()">Demander un prêt</button>
-      </div>
-
-      <div class="reclamer-box">
-        <h3 style="color:var(--pr);margin:0 0 6px 0">💰 Gains Journaliers</h3>
-        <p class="mu" style="margin:0 0 12px 0">Récupérez vos revenus des sacs actifs chaque jour en FCFA</p>
-        <button id="btn-reclamer" class="btn btn-sm" onclick="reclamerMesGains()" ${!hasGainsAvailable ? 'disabled' : ''}>
-          ${hasGainsAvailable ? '🔓 Réclamer mes gains' : '🔒 En attente...'}
-        </button>
-        <div id="gain-msg" class="err" style="margin-top:8px">
-          ${hasGainsAvailable ? '✨ Des gains sont disponibles !' : '⏰ Revenez demain matin pour réclamer'}
+        <h2>Avenir Capital</h2>
+        
+        <!-- Formulaire avec autocomplétion désactivée -->
+        <div class="input-group">
+            <label for="ph">Numéro de téléphone</label>
+            <input type="tel" id="ph" autocomplete="off" placeholder="+225...">
         </div>
-      </div>
 
-      <div class="grid">
-        <button onclick="go('recharge')">➕<br>Recharger</button>
-        <button onclick="go('withdraw')">💸<br>Retirer</button>
-        <button onclick="go('invest')">📈<br>Investir</button>
-        <button onclick="go('team')">👥<br>Parrainage</button>
-      </div>
-      <button class="li" onclick="go('card')">💳 Portefeuille de retrait (${cardInfo}) <span>›</span></button>
-      <button class="li" onclick="go('team')">👥 Mon équipe & Parrainage <span>›</span></button>
-      <button class="li" onclick="go('achats')">📦 Mes sacs achetés <span>›</span></button>
-      <button class="li" onclick="go('histRec')">Historique des recharges <span>›</span></button>
-      <button class="li" onclick="go('histRet')">Historique des retraits <span>›</span></button>
-      <button class="li" onclick="go('service')">Service client & Groupe <span>›</span></button>
+        <div class="input-group">
+            <label for="pw">Mot de passe</label>
+            <input type="password" id="pw" autocomplete="new-password" placeholder="••••••">
+        </div>
 
-      <div style="margin-top: 24px; margin-bottom: 20px;">
-        <button class="btn out" onclick="logout()">Se déconnecter</button>
-      </div>
-    `;
-  },
+        <button class="btn" onclick="login()">Se connecter</button>
+    </div>
 
-  invest:()=>`${back()}<h2>Investir</h2>`+VIP.map((v,i)=>`<div class="card">
-    <img src="${v.img}" alt="${v.n}" class="prod-img">
-    <div class="row"><b>${v.n}</b><b>${F(v.p)}</b></div>
-    <p class="mu">Gain journalier : ${F(v.d)} · Durée : ${v.days} jours</p>
-    <p class="mu">Revenu total : ${F(v.total)} (Bénéfice : ${F(v.benef)})</p>
-    <button class="btn" onclick="buy(${i})">Acheter ce sac</button>
-  </div>`).join(""),
+<script>
+    function login() {
+        const phone = document.getElementById('ph').value;
+        const pw = document.getElementById('pw').value;
+        if(!phone || !pw) {
+            alert("Veuillez remplir tous les champs");
+            return;
+        }
+        // Votre logique de connexion existante...
+    }
+</script>
 
-  recharge:()=>`${back()}<h2>Recharger</h2><div class="card"><p class="mu">Entrez le montant à recharger (Min. 1 000 F)</p><input id="a" type="number" placeholder="Ex: 10000"><div id="err" class="err"></div><button class="btn" onclick="toMethod()">Continuer</button></div>`,
-
-  method:()=>`${back()}<h2>Choisir le mode de paiement</h2><div class="card"><p class="mu">Montant : <b>${F(T.amt)}</b></p>`+METH.map(m=>`<button class="btn sec" style="margin-bottom:10px;" onclick="go('payDetails',{m:'${m}'})">${m}</button>`).join("")+`</div>`,
-
-  payDetails:()=>{
-    const m = T.m;
-    let num = WAVE_NUM;
-    if(m === "Moov Money") num
+</body>
+</html>
